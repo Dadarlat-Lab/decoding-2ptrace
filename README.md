@@ -6,7 +6,7 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 ## Pipeline for training
 ### 1. Prepare data
 - Function: prepare_data() in prepare_data.py
-- Save data in npy files to use in the pipeline
+- Save data in npy files to use in the pipeline.
 - Saved files: The descriptions are in order of saving - see a code for a reference. A lot of extra files are being saved because they were necessary for checking or research. (*) is added for important files.
     - ops.npy: 'Lx' and 'Ly' (size of X/Y dimension of tiffs/h5) from the ops file from suite2p (See here for ops file information: https://suite2p.readthedocs.io/en/latest/outputs.html#ops-npy-fields).
     - stat.npy: stat from suite2p, but only for cells (See here for stat file information: https://suite2p.readthedocs.io/en/latest/outputs.html#stat-npy-fields).
@@ -75,4 +75,18 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 ### 4. Convert normalized output
 - Function: convert_norm_coord_dir() in analysis.py
 - The saved outputs (in output/val; epoch_1_gt.npy, epoch_1_pred.npy, ...) are normalized. So converting normalization back using the original coordinates is needed.
-- The final outputs you have to use for further analysis are 'gt_norm_converted_epoch{best_epoch_number}.npy' and 'pred_norm_converted_epoch{best_epoch_number}.npy'. 
+- The final outputs you have to use for further analysis are 'gt_norm_converted_epoch{best_epoch_number}.npy' and 'pred_norm_converted_epoch{best_epoch_number}.npy'.
+
+## For further analysis besides basic training
+### Neural importance
+#### 1. Save neural importance
+- Function: save_neuron_importance() in analysis.py
+- Save neural importance.
+#### 2. Save important neurons as data
+- Function: save_important_neurons() in prepare_data.py
+- Save important neurons as a dataset that can be used for training.
+- Saved in '{dir_data}/save_neuron_importance'.
+- 'impt-{10/25/50/75/90}.npy': the top 10%/25%/50%/75%/90% important neurons.
+- 'impt-{10/25/50/75/90}_least.npy': the least 10%/25%/50%/75%/90% important neurons.
+
+  
