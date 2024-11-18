@@ -3,6 +3,12 @@
 Codes for\
 Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from two-photon calcium imaging of neuronal activity using deep learning. *Journal of Neural Engineering*.
 
+## Environment
+- Python: 3.10.4
+- PyTorch: 1.12.1
+- scikit-learn: 1.1.2
+- Optuna: 3.0.3
+
 ## Pipeline for training
 ### 1. Prepare data
 - Function: prepare_data() in prepare_data.py
