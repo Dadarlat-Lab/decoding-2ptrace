@@ -89,4 +89,11 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 - 'impt-{10/25/50/75/90}.npy': the top 10%/25%/50%/75%/90% important neurons.
 - 'impt-{10/25/50/75/90}_least.npy': the least 10%/25%/50%/75%/90% important neurons.
 
-  
+### Save random neurons
+- function: save_random_neurons() in prepare_data.py
+
+### Save top and low skew neurons
+- function: save_skew_neurons() in prepare_data.py
+- Save only neurons with 10% top and low skewness into a dataset for training.
+
+
