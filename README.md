@@ -17,8 +17,9 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 
 ### 3. Run training with the optimal parameters obtained from step 2
 - Function: experiment_multiple() in train_experiment.py
+- Input parameters (reference the code) to run_dict in experiment_multiple().
 
 ### 4. Convert normalized output
 - Function: convert_norm_coord_dir() in analysis.py
-- The saved outputs (in output/val; epoch_1_gt.npy, epoch_1_pred.npy, ...) are normalized. So converting normalization using the original coordinates is needed.
+- The saved outputs (in output/val; epoch_1_gt.npy, epoch_1_pred.npy, ...) are normalized. So converting normalization back using the original coordinates is needed.
 - The final outputs you have to use for further analysis are 'gt_norm_converted_epoch{best_epoch_number}.npy' and 'pred_norm_converted_epoch{best_epoch_number}.npy'. 
