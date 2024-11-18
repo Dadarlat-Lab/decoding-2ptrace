@@ -9,7 +9,7 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 - scikit-learn: 1.1.2
 - Optuna: 3.0.3
 
-## Pipeline for training
+## Pipeline for training 
 ### 1. Prepare data
 - Function: prepare_data() in prepare_data.py
 - Save data in npy files to use in the pipeline.
@@ -82,6 +82,10 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 - Function: convert_norm_coord_dir() in analysis.py
 - The saved outputs (in output/val; epoch_1_gt.npy, epoch_1_pred.npy, ...) are normalized. So converting normalization back using the original coordinates is needed.
 - The final outputs you have to use for further analysis are 'gt_norm_converted_epoch{best_epoch_number}.npy' and 'pred_norm_converted_epoch{best_epoch_number}.npy'.
+
+### Linear regression
+- File: linear_regression.py
+- Algorithms: 'linearlass', 'kalman', kalmanlass', 'kalmanlassl_lag_1'
 
 ## For further analysis besides basic training
 ### Neural importance
