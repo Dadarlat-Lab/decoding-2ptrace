@@ -8,6 +8,10 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 - PyTorch: 1.12.1
 - scikit-learn: 1.1.2
 - Optuna: 3.0.3
+- "decoding_messy.yml": The Anaconda environment used for the project. However, the environment includes other libraries not used for the project.
+```
+conda env create -f decoding_messy.yml
+```
 
 ## Pipeline for training 
 ### 1. Prepare data
