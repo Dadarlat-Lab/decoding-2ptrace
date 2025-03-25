@@ -1,6 +1,6 @@
 # Decoding multi-limb movements from two-photon calcium imaging of neuronal activity using deep learning
 
-Codes for\
+Codes for:\
 Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from two-photon calcium imaging of neuronal activity using deep learning. *Journal of Neural Engineering*.
 
 ## Environment
@@ -12,6 +12,21 @@ Park, S., Lipton, M., & Dadarlat, M. (2024). Decoding multi-limb movements from 
 ```
 conda env create -f decoding_messy.yml
 ```
+
+## Files
+- prepare_data.py: Load, preprocess, and save data to use for the following process.
+- optuna_p.py: Run optuna to get optimized hyperparameters (hyperparameter tuning).
+- train_experiment.py: Run training with the optimized hyperparameters obtained from Optuna running, for detailed further analysis.
+- trainer.py: Code for training, used in optuna_p.py and train_experiment.py
+- analysis.py: Code for further analysis after training.
+- networks.py: Code for artificial neural networks used in trainer.py.
+- dataset.py: Code for a customized PyTorch dataset used in trainer.py.
+- scores.py: Code for scoring decoding performance.
+- Logger.py, LoggingPrinter.py: Code for logging.
+- linear_regression.py: Code for linear regression.
+- plot.py: Code for plotting.
+- saver.py: Code for saving results.
+- utils.py: Code for utils.
 
 ## Pipeline for training 
 ### 1. Prepare data
@@ -91,7 +106,7 @@ conda env create -f decoding_messy.yml
 - File: linear_regression.py
 - Algorithms: 'linearlass', 'kalman', kalmanlass', 'kalmanlassl_lag_1'
 
-## For further analysis besides basic training
+## Pipeline For further analysis
 ### Neural importance
 #### 1. Save neural importance
 - Function: save_neuron_importance() in analysis.py
